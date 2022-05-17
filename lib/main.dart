@@ -110,6 +110,35 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              child: Text('我的日常'),
+              decoration: BoxDecoration(color: Colors.blue),
+            ),
+            ListTile(
+              title: const Text('学习'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('科研'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('生活'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('业余'),
+              onTap: () {},
+            )
+          ],
+        ),
+      ),
     );
   }
 }
