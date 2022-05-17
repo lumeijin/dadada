@@ -126,15 +126,24 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               title: Text('科研'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+
+              },
             ),
             ListTile(
               title: Text('生活'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+
+              },
             ),
             ListTile(
               title: Text('业余'),
-              onTap: () {},
+              onTap: () {
+                Navigator.pop(context);
+
+              },
             )
           ],
         ),
