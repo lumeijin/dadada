@@ -95,8 +95,14 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Image.asset('images/pic1.jpg',
+            fit: BoxFit.cover,),
             const Text(
               'You have pushed the button this many times:',
+              style: TextStyle(
+                fontSize: 20.0,
+              ),
+              textAlign:TextAlign.center,
             ),
             Text(
               '$_counter',
@@ -124,7 +130,9 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               decoration: BoxDecoration(
                 color: Colors.blue,
-                image: DecorationImage(image: NetworkImage("https://www.yulumi.cn/gl/uploads/allimg/201128/1622554M7-0.jpg")),
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "https://www.yulumi.cn/gl/uploads/allimg/201128/1622554M7-0.jpg")),
               ),
             ),
             ListTile(
