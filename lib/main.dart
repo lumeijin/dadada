@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'LMJ\'s resume'),
     );
   }
 }
@@ -115,8 +115,17 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              child: Text('我的日常'),
-              decoration: BoxDecoration(color: Colors.blue),
+              child: Text(
+                '我的日常',
+                style: TextStyle(
+                    fontSize: 40.0,
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromRGBO(255, 75, 75, 0.9)),
+              ),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                image: DecorationImage(image: NetworkImage("https://www.yulumi.cn/gl/uploads/allimg/201128/1622554M7-0.jpg")),
+              ),
             ),
             ListTile(
               title: const Text('学习'),
@@ -128,21 +137,18 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text('科研'),
               onTap: () {
                 Navigator.pop(context);
-
               },
             ),
             ListTile(
               title: Text('生活'),
               onTap: () {
                 Navigator.pop(context);
-
               },
             ),
             ListTile(
               title: Text('业余'),
               onTap: () {
                 Navigator.pop(context);
-
               },
             )
           ],
