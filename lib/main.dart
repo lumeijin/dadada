@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
           //
           // Invoke "debug painting" (press "p" in the console, choose the
           // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
+          // Studio, or the "Toggle Debug Paint" command in Visual dStudio Code)
           // to see the wireframe for each widget.
           //
           // Column has various properties to control how it sizes itself and
@@ -96,9 +96,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Image.asset(
-              'images/pic1.jpg',
-              fit: BoxFit.cover,
-            ),
+                  "images/pic4.jpg",
+                  width: 250,
+                  height: 250,
+                ),
             const Text(
               'You have pushed the button this many times:',
               style: TextStyle(
@@ -111,15 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
               style: Theme.of(context).textTheme.headline4,
             ),
             Container(
-              width: 300.0,
-              height: 300.0,
+              width: 100.0,
+              height: 100.0,
               decoration: BoxDecoration(
                 color: Colors.yellow,
-                borderRadius: BorderRadius.circular(150),
+                borderRadius: BorderRadius.circular(100),
                 image: const DecorationImage(
-                    image: AssetImage(
-                        'images/pic5.jpg'),
-                    fit: BoxFit.cover),
+                    image: AssetImage('images/pic5.jpg'), fit: BoxFit.cover),
               ),
             ),
           ],
@@ -140,13 +139,14 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(
                     fontSize: 40.0,
                     fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(255, 75, 75, 0.9)),
+                    color: Colors.blue),
               ),
               decoration: BoxDecoration(
                 color: Colors.blue,
                 image: DecorationImage(
-                    image: NetworkImage(
-                        "https://img.zcool.cn/community/pic3.jpg")),
+                  image: NetworkImage(
+                      "https://www.yulumi.cn/gl/uploads/allimg/201128/161H4HI-2.jpg"),
+                ),
               ),
             ),
             ListTile(
