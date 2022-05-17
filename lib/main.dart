@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'LMJ\'s resume'),
+      home: const MyHomePage(title: 'LMJ\'s Daily Life'),
     );
   }
 }
@@ -48,19 +48,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -75,60 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual dStudio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset(
-                  "images/pic4.jpg",
-                  width: 250,
-                  height: 250,
-                ),
-            const Text(
-              'You have pushed the button this many times:',
-              style: TextStyle(
-                fontSize: 20.0,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-            Container(
-              width: 100.0,
-              height: 100.0,
-              decoration: BoxDecoration(
-                color: Colors.yellow,
-                borderRadius: BorderRadius.circular(100),
-                image: const DecorationImage(
-                    image: AssetImage('images/pic5.jpg'), fit: BoxFit.cover),
-              ),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      body: BodyContent(),
+      // This trailing comma makes auto-formatting nicer for build methods.
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -156,25 +91,58 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: Text('科研'),
+              title: const Text('科研'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('生活'),
+              title: const Text('生活'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('业余'),
+              title: const Text('业余'),
               onTap: () {
                 Navigator.pop(context);
               },
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class BodyContent extends StatelessWidget {
+  var list = [];
+
+  BodyContent({Key? key}) : super(key: key) {
+    for (var i = 0; i < 18; i++) {
+      list.add("元神${i + 1}");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Center(
+      child: ListView.builder(
+          itemCount: list.length, itemBuilder: (context, index) {
+          return ListTile(
+            leading: CircleAvatar(
+            //头像半径
+            radius: 60,
+            //头像图片 -> NetworkImage网络图片，AssetImage项目资源包图片, FileImage本地存储图片
+            backgroundImage: AssetImage(
+              'images/ys${index + 1}.png',
+            ),
+          ),
+            title: Text(
+              "元神${index + 1}", style: const TextStyle(fontSize: 28),),
+            subtitle: Text("详细说明${index + 1}"),
+          );}
       ),
     );
   }
