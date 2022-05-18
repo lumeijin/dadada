@@ -1,3 +1,4 @@
+import 'package:dadada/pages/user/Login.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/sidebar/life.dart';
@@ -7,6 +8,9 @@ import '../pages/sidebar/study.dart';
 import '../pages/tabs.dart';
 import '../pages/tabs/Setting.dart';
 import '../pages/tabs/category.dart';
+import '../pages/user/register_first.dart';
+import '../pages/user/register_second.dart';
+import '../pages/user/register_third.dart';
 
 final Map<String, Function> routes = {
   '/': (contxt, {arguments}) => const Tabs(),
@@ -17,6 +21,11 @@ final Map<String, Function> routes = {
   '/research': (context, {arguments}) => ResearchPage(),
   '/life': (context, {arguments}) => LifePage(),
   '/leisure': (context, {arguments}) => LeisurePage(),
+
+  '/login': (context, {arguments}) => const LoginPage(),
+  '/register1': (context, {arguments}) => RegisterFirstPage(),
+  '/register2': (context, {arguments}) => const RegisterSecondPage(),
+  '/register3': (context, {arguments}) => const RegisterThirdPage(),
 };
 
 var onGenerateRoute = (RouteSettings settings) {

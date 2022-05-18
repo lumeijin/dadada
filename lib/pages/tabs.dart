@@ -5,20 +5,24 @@ import 'package:flutter/material.dart';
 
 
 class Tabs extends StatefulWidget {
+  final index;
   //Flutter2.2.0之后需要注意把Key改为可空类型  {Key? key} 表示Key为可空类型
-  const Tabs({Key? key}) : super(key: key);
+  const Tabs({Key? key,this.index=0}) : super(key: key);
 
   @override
-  _TabsState createState() => _TabsState();
+  _TabsState createState() => _TabsState(index);
 }
 
 class _TabsState extends State<Tabs> {
-  int _currentIndex = 0;
+  int _currentIndex;
   final List _pageList = [
     HomePage(),
     CategoryPage(),
     SettingPage(),
   ];
+
+  _TabsState(this._currentIndex);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
