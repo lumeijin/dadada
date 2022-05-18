@@ -1,3 +1,4 @@
+import 'package:dadada/layout/expanded_layout.dart';
 import 'package:flutter/material.dart';
 import 'res/listData.dart';
 
@@ -63,7 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: GridViewLayout(),
+      // Attention!!! Body is frequently changed.
+      body: ExpandedLayout(),
       // This trailing comma makes auto-formatting nicer for build methods.
       drawer: Drawer(
         child: ListView(
