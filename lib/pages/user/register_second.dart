@@ -9,6 +9,7 @@ class RegisterSecondPage extends StatelessWidget {
         appBar: AppBar(title: const Text("第二步-验证码")),
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const SizedBox(height: 40),
               const Text("输入验证码完成注册"),
