@@ -66,25 +66,25 @@ class _TabsState extends State<Tabs> {
             ListTile(
               title: const Text('学习'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/study');
               },
             ),
             ListTile(
               title: const Text('科研'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/research');
               },
             ),
             ListTile(
               title: const Text('生活'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/life');
               },
             ),
             ListTile(
-              title: const Text('业余'),
+              title: const Text('休闲'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pushNamed(context,'/leisure');
               },
             )
           ],

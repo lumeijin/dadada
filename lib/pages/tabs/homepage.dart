@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../res/listData.dart';
+import '../../res/listdata.dart';
 
 
 class HomePage extends StatelessWidget {

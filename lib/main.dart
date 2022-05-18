@@ -1,4 +1,4 @@
-import 'package:dadada/pages/tabs.dart';
+import 'package:dadada/res/routesdata.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -25,7 +25,9 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const Tabs(),
+      // home: const Tabs(),
+      initialRoute: '/',
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }
