@@ -27,7 +27,19 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("LMJ's Daily Life"),
+        title:  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children:[
+            const Expanded(child: Text("LMJ's Daily Life"),flex: 4,),
+            Expanded(
+                child: InkWell(
+                  child: const CircleAvatar(radius: 18.0,backgroundImage: AssetImage('images/ys8.png'),),
+                  onTap: (){
+                    Navigator.pushNamed(context, '/login');
+                  },
+                ),
+            )
+          ],),
       ),
       body: _pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -70,24 +82,28 @@ class _TabsState extends State<Tabs> {
             ListTile(
               title: const Text('学习'),
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.pushNamed(context,'/study');
               },
             ),
             ListTile(
               title: const Text('科研'),
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.pushNamed(context,'/research');
               },
             ),
             ListTile(
               title: const Text('生活'),
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.pushNamed(context,'/life');
               },
             ),
             ListTile(
               title: const Text('休闲'),
               onTap: () {
+                Navigator.of(context).pop();
                 Navigator.pushNamed(context,'/leisure');
               },
             )
