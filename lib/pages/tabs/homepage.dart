@@ -3,37 +3,94 @@ import '../../res/listdata.dart';
 
 
 class HomePage extends StatelessWidget {
-  List list = [];
 
-  HomePage({Key? key}) : super(key: key) {
-    for (var i = 0; i < 18; i++) {
-      list.add("元神${i + 1}");
-    }
-  }
+  HomePage({Key? key}) : super(key: key) ;
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: ListView.builder(
-          itemCount: list.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              leading: CircleAvatar(
-                //头像半径
-                radius: 60,
-                //头像图片 -> NetworkImage网络图片，AssetImage项目资源包图片, FileImage本地存储图片
-                backgroundImage: AssetImage(
-                  'images/ys${index + 1}.png',
-                ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Row(
+          children: const [
+            SizedBox(width: 15.0,),
+            Text("课程表",style: TextStyle(
+            fontSize: 20,
+          ),
+          ),
+            SizedBox(width: 20.0,)
+          ]
+        ),
+        Container(
+          height: 60,
+          margin:const EdgeInsets.all(10.0),
+          child: const Text("今天没有课程哟~",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black12
+              )
+          ),
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.all(Radius.circular(6.0),
+          ),
+        ),
+        ),
+        Row(
+            children: const [
+              SizedBox(width: 15.0,),
+              Text("考试表",style: TextStyle(
+                fontSize: 20,
               ),
-              title: Text(
-                "元神${index + 1}",
-                style: const TextStyle(fontSize: 28),
               ),
-              subtitle: Text("详细说明${index + 1}"),
-            );
-          }),
+              SizedBox(width: 20.0,)
+            ]
+        ),
+        Container(
+          height: 60,
+          margin:const EdgeInsets.all(10.0),
+          child: const Text("今天没有考试哟~",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black12
+              )
+          ),
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.all(Radius.circular(6.0),
+            ),
+          ),
+        ),
+        Row(
+            children: const [
+              SizedBox(width: 15.0,),
+              Text("我的收藏",style: TextStyle(
+                fontSize: 20,
+              ),
+              ),
+              SizedBox(width: 20.0,)
+            ]
+        ),
+        Container(
+          height: 60,
+          margin:const EdgeInsets.all(10.0),
+          child: const Text("暂时没有收藏哟~",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black12
+              )
+          ),
+          alignment: Alignment.center,
+          decoration: const BoxDecoration(
+            color: Colors.grey,
+            borderRadius: BorderRadius.all(Radius.circular(6.0),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
