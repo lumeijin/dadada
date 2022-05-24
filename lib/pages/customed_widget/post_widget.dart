@@ -33,9 +33,10 @@ class _PostWidgetState extends State<PostWidget> {
               ],
             ),
             Align(
+              heightFactor: 1.1,
               alignment: Alignment.centerLeft,
               child: Chip(
-                labelPadding: const EdgeInsets.only(left: 2, right: 2, top: -5, bottom: -5),
+                labelPadding: const EdgeInsets.only(left: 2, right: 2, top: -3, bottom: -3),
                 label: Text("${widget.label}",
                   style: const TextStyle(
                     fontSize: 12.0,

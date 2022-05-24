@@ -75,30 +75,35 @@ class _CategoryPageState extends State<CategoryPage> {
           ],
         ),
         const SizedBox(height: 10,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:   [
-            const Text("🐭🐭下午好呀~"),
-            const SizedBox(width: 250,),
-            DropdownButton(
-              icon: const Icon(Icons.arrow_drop_down),
-              iconSize: 40,
-              iconEnabledColor: Colors.green.withOpacity(0.7),
-            hint: const Text('排序方式',style: TextStyle(fontSize: 16),),
-            value: _dropdownValue,
-            items: const [
-            DropdownMenuItem(child: Text('默认'), value: 1),
-            DropdownMenuItem(child: Text('最新'), value: 2),
+        Padding(
+          padding: const EdgeInsets.only(left: 4,right: 4),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children:   [
+              const SizedBox(width: 4.0,),
+              const Text("🐭🐭晚上好呀~"),
+              const Spacer(),
+              DropdownButton(
+                icon: const Icon(Icons.arrow_drop_down),
+                iconSize: 40,
+                iconEnabledColor: Colors.green.withOpacity(0.7),
+              hint: const Text('排序方式',style: TextStyle(fontSize: 16),),
+              value: _dropdownValue,
+              items: const [
+              DropdownMenuItem(child: Text('默认'), value: 1),
+              DropdownMenuItem(child: Text('最新'), value: 2),
+              ],
+              onChanged: (value) {
+                  _dropdownValue=int.parse(value.toString());
+                  setState(() {
+                    // _dropdownValue=value;
+                  });
+              },
+              ),
+              const SizedBox(width: 4.0,),
             ],
-            onChanged: (value) {
-                _dropdownValue=int.parse(value.toString());
-                setState(() {
-                  // _dropdownValue=value;
-                });
-            },
-            )
-          ],
 
+          ),
         ),
         const SizedBox(height: 10,),
         //轮播图
