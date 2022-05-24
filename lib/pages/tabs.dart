@@ -27,20 +27,21 @@ class _TabsState extends State<Tabs> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:[
-            const Expanded(child: Text("LMJ's Daily Life"),flex: 4,),
-            Expanded(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Expanded(child: Text("LMJ's Daily Life"), flex: 4,),
+              Expanded(
                 child: InkWell(
-                  child: const CircleAvatar(radius: 18.0,backgroundImage: AssetImage('images/ys8.png'),),
-                  onTap: (){
+                  child: const CircleAvatar(radius: 18.0,
+                    backgroundImage: AssetImage('images/ys8.png'),),
+                  onTap: () {
                     Navigator.pushNamed(context, '/login');
                   },
                 ),
-            )
-          ],),
-      ),
+              )
+            ],),
+        ),
       body: _pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex, //配置对应的索引值选中

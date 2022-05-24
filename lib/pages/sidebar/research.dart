@@ -1,4 +1,5 @@
 
+import 'package:dadada/layout/gridview_layout.dart';
 import 'package:flutter/material.dart';
 
 class ResearchPage extends StatelessWidget {
@@ -10,7 +11,7 @@ class ResearchPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("科研区"),
       ),
-      body:const Text('我是科研区',style: TextStyle(fontSize: 40.0),),
+      body:const GridViewLayout(),
     );
   }
 }
