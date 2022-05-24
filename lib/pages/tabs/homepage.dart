@@ -12,6 +12,7 @@ class HomePage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        const SizedBox(height: 10,),
         Row(
           children: const [
             SizedBox(width: 15.0,),

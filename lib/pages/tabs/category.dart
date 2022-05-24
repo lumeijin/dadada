@@ -1,3 +1,4 @@
+import 'package:dadada/pages/customed_widget/post_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:card_swiper/card_swiper.dart';
 
@@ -101,29 +102,59 @@ class _CategoryPageState extends State<CategoryPage> {
         ),
         const SizedBox(height: 10,),
         //轮播图
-        SizedBox(
-          height: 100.0,
-          child: Expanded(
-            child: Swiper(
-              itemBuilder: (BuildContext context,int index){
-                // 配置图片地址
-                return Image.asset(imageList[index]["url"],fit: BoxFit.contain,);
-              },
-              // 配置图片数量
-              itemCount: imageList.length ,
-              // 底部分页器
-              pagination: const SwiperPagination(),
-              // 左右箭头
-              control: const SwiperControl(),
-              // 无限循环
-              loop: true,
-              // 自动轮播
-              autoplay: true,
-            ),
+        Expanded(
+          child: ListView(
+              shrinkWrap:true,
+            scrollDirection:Axis.vertical ,
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: 100.0,
+                child: Swiper(
+                  itemBuilder: (BuildContext context,int index){
+                    // 配置图片地址
+                    return Image.asset(imageList[index]["url"],fit: BoxFit.contain,);
+                  },
+                  // 配置图片数量
+                  itemCount: imageList.length ,
+                  // 底部分页器
+                  pagination: const SwiperPagination(),
+                  // 左右箭头
+                  control: const SwiperControl(),
+                  // 无限循环
+                  loop: true,
+                  // 自动轮播
+                  autoplay: true,
+                ),
+              ),
+              PostWidget(
+                  title: "标题1",
+                  label: "羞羞",
+                  detail: "我一天不羞羞就浑身难受,我一天不羞羞就浑身难受,我一天不羞羞就浑身难受,我一天不羞羞就浑身难受,"
+              ),
+              PostWidget(
+                  title: "标题2",
+                  label: "涩涩",
+                  detail: "我一天不涩涩就浑身难受,我一天不涩涩就浑身难受,我一天不涩涩就浑身难受,我一天不涩涩就浑身难受,"
+              ),
+              PostWidget(
+                  title: "标题3",
+                  label: "开车",
+                  detail: "我一天不开车就浑身难受,我一天不开车就浑身难受,我一天不开车就浑身难受,我一天不开车就浑身难受,"
+              ),
+              PostWidget(
+                  title: "标题4",
+                  label: "污污",
+                  detail: "我一天不污污就浑身难受,我一天不污污就浑身难受,我一天不污污就浑身难受,我一天不污污就浑身难受,"
+              ),
+              PostWidget(
+                  title: "标题5",
+                  label: "贴贴",
+                  detail: "我一天不贴贴就浑身难受,我一天不贴贴就浑身难受,我一天不贴贴就浑身难受,我一天不贴贴就浑身难受,"
+              ),
+            ],
           ),
-        ),
-
-
+        )
       ],
     );
   }
