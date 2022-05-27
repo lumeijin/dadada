@@ -9,7 +9,9 @@ class GridViewLayout extends StatelessWidget {
       return Container(
           child: Column(
             children: <Widget>[
-              Image.asset(value["imageUrl"]),
+              Expanded(
+                  child: Image.asset(value["imageUrl"]),
+              ),
               const SizedBox(height: 12),
               Text(value["title"],
                   textAlign: TextAlign.center,
@@ -28,7 +30,7 @@ class GridViewLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return GridView.count(
-      padding: EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20),
       crossAxisCount: 2,
       crossAxisSpacing: 20,
       mainAxisSpacing: 40,

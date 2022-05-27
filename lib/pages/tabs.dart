@@ -10,18 +10,23 @@ class Tabs extends StatefulWidget {
   const Tabs({Key? key,this.index=0}) : super(key: key);
 
   @override
-  _TabsState createState() => _TabsState(index);
+  _TabsState createState() => _TabsState();
 }
 
 class _TabsState extends State<Tabs> {
-  int _currentIndex;
+  late int _currentIndex;
   final List _pageList = [
     HomePage(),
-    CategoryPage(),
-    SettingPage(),
+    const CategoryPage(),
+    const SettingPage(),
   ];
 
-  _TabsState(this._currentIndex);
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _currentIndex = widget.index;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +61,7 @@ class _TabsState extends State<Tabs> {
         type: BottomNavigationBarType.fixed, //配置底部tabs可以有多个按钮
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "首页"),
-          BottomNavigationBarItem(icon: Icon(Icons.category), label: "分类"),
+          BottomNavigationBarItem(icon: Icon(Icons.category), label: "求实"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "设置")
         ],
       ),
