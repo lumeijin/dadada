@@ -1,6 +1,9 @@
+import 'package:dadada/pages/sidebar/mycart.dart';
+import 'package:dadada/pages/sidebar/mylogin.dart';
 import 'package:dadada/pages/user/Login.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/sidebar/mycatalog.dart';
 import '../pages/sidebar/life.dart';
 import '../pages/sidebar/research.dart';
 import '../pages/sidebar/leisure.dart';
@@ -13,22 +16,28 @@ import '../pages/user/register_second.dart';
 import '../pages/user/register_third.dart';
 
 final Map<String, Function> routes = {
-  '/': (contxt, {arguments}) => const Tabs(),
+  '/': (context, {arguments}) => const Tabs(),
   '/home': (context, {arguments}) => const LifePage(),
-  '/category': (context, {arguments}) => CategoryPage(),
-  '/setting': (context, {arguments}) => SettingPage(),
+  '/category': (context, {arguments}) => const CategoryPage(),
+  '/setting': (context, {arguments}) => const SettingPage(),
   '/study': (context, {arguments}) => StudyPage(),
-  '/research': (context, {arguments}) => ResearchPage(),
-  '/life': (context, {arguments}) => LifePage(),
-  '/leisure': (context, {arguments}) => LeisurePage(),
+  '/research': (context, {arguments}) => const ResearchPage(),
+  '/life': (context, {arguments}) => const LifePage(),
+  '/leisure': (context, {arguments}) => const LeisurePage(),
 
   '/login': (context, {arguments}) => const LoginPage(),
   '/register1': (context, {arguments}) => RegisterFirstPage(),
   '/register2': (context, {arguments}) => const RegisterSecondPage(),
   '/register3': (context, {arguments}) => const RegisterThirdPage(),
+
+  '/mycatalog': (context, {arguments}) => const MyCatalog(),
+  '/mylogin': (context, {arguments}) => const MyLogin(),
+  '/mycart': (context, {arguments}) => const MyCart(),
+
+
 };
 
-var onGenerateRoute = (RouteSettings settings) {
+Route? onGenerateRoute(RouteSettings settings) {
   //String? 表示name为可空类型
   final String? name = settings.name;
   //Function? 表示pageContentBuilder为可空类型
@@ -41,8 +50,9 @@ var onGenerateRoute = (RouteSettings settings) {
       return route;
     } else {
       final Route route =
-          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       return route;
     }
   }
-};
+  return null;
+}

@@ -1,7 +1,10 @@
+import 'package:dadada/pages/sidebar/models/cartmodel.dart';
+import 'package:dadada/pages/sidebar/models/catalogmodel.dart';
 import 'package:dadada/pages/tabs/Setting.dart';
 import 'package:dadada/pages/tabs/category.dart';
 import 'package:dadada/pages/tabs/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 
 class Tabs extends StatefulWidget {
@@ -111,6 +114,13 @@ class _TabsState extends State<Tabs> {
               onTap: () {
                 Navigator.of(context).pop();
                 Navigator.pushNamed(context,'/leisure');
+              },
+            ),
+            ListTile(
+              title: const Text('购物'),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context,'/mylogin');
               },
             )
           ],
