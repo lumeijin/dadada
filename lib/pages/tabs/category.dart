@@ -11,6 +11,130 @@ class CategoryPage extends StatefulWidget {
 }
 
 class _CategoryPageState extends State<CategoryPage> {
+
+  final List<Widget> _tabList = [
+    const Text("全部"),
+    const Text("热搜"),
+    const Text("学习"),
+    const Text("交往"),
+    const Text("摆摊"),
+    const Text("校务"),
+  ];
+  final List<Widget> _tabViewList = [
+    const QuanBu(),
+    const ReSou(),
+    const XueXi(),
+    const JiaoWang(),
+    const BaiTan(),
+    const XiaoWu(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: _tabList.length,
+      child: Scaffold(
+        appBar: AppBar(
+          leading: const Icon(Icons.message),
+          title: Row(
+            children:  [
+              Expanded(
+                child: Container(
+                  margin:const EdgeInsets.only(top: 8.0),
+                  height: 32.0,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                          color: Colors.grey, width: 1.0
+                      ),
+                      borderRadius: const BorderRadius.all( Radius.circular(8.0) )
+                  ),
+                  child: const TextField(
+                    decoration: InputDecoration(
+                      hintText: "搜索发现",
+                      border: InputBorder.none,
+                    ),
+
+                    showCursor: true,
+                  ),
+                ),
+                flex: 8,
+              ),
+              const Expanded(
+                child: Icon(Icons.add),
+                flex: 1,
+              ),
+            ],
+          ),
+          bottom:  TabBar(
+            tabs: _tabList,
+          ),
+        ),
+        body: TabBarView(
+          children: _tabViewList,
+        )
+      ),
+    );
+  }
+}
+
+class XiaoWu extends StatelessWidget{
+  const XiaoWu({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class BaiTan extends StatelessWidget{
+  const BaiTan({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class JiaoWang extends StatelessWidget{
+  const JiaoWang({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class XueXi extends StatelessWidget{
+  const XueXi({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    throw UnimplementedError();
+  }
+}
+
+class ReSou extends StatelessWidget{
+  const ReSou({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return const Text("我是热搜");
+  }
+}
+class QuanBu extends StatefulWidget {
+  const QuanBu({Key? key}) : super(key: key);
+
+  @override
+  State<QuanBu> createState() => _QuanBuState();
+}
+
+class _QuanBuState extends State<QuanBu> {
   int _dropdownValue = 1;
   List<Map> imageList = [
     {
@@ -23,57 +147,10 @@ class _CategoryPageState extends State<CategoryPage> {
       "url":"images/轮播3.jpg"
     },
   ];
-
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children:  [
-            const Expanded(
-              child: Icon(Icons.message),
-            flex: 1,
-            ),
-            Expanded(
-                child: Container(
-                  margin:const EdgeInsets.only(top: 8.0),
-                  height: 32.0,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    border: Border.all(
-                      color: Colors.grey, width: 1.0
-                    ),
-                      borderRadius: const BorderRadius.all( Radius.circular(8.0) )
-                  ),
-                  child: const TextField(
-                      decoration: InputDecoration(
-                        hintText: "搜索发现",
-                        border: InputBorder.none,
-                    ),
-
-                      showCursor: true,
-                  ),
-                ),
-            flex: 8,
-            ),
-            const Expanded(
-              child: Icon(Icons.add),
-            flex: 1,
-            ),
-          ],
-        ),
-        const SizedBox(height: 10,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:  [
-            InkWell(child: const Text("全部"),onTap: (){},),
-            InkWell(child: const Text("热搜"),onTap: (){},),
-            InkWell(child: const Text("学习"),onTap: (){},),
-            InkWell(child: const Text("交往"),onTap: (){},),
-            InkWell(child: const Text("摆摊"),onTap: (){},),
-            InkWell(child: const Text("校务"),onTap: (){},),
-          ],
-        ),
         const SizedBox(height: 10,),
         Padding(
           padding: const EdgeInsets.only(left: 4,right: 4),
@@ -87,18 +164,18 @@ class _CategoryPageState extends State<CategoryPage> {
                 icon: const Icon(Icons.arrow_drop_down),
                 iconSize: 40,
                 iconEnabledColor: Colors.green.withOpacity(0.7),
-              hint: const Text('排序方式',style: TextStyle(fontSize: 16),),
-              value: _dropdownValue,
-              items: const [
-              DropdownMenuItem(child: Text('默认'), value: 1),
-              DropdownMenuItem(child: Text('最新'), value: 2),
-              ],
-              onChanged: (value) {
+                hint: const Text('排序方式',style: TextStyle(fontSize: 16),),
+                value: _dropdownValue,
+                items: const [
+                  DropdownMenuItem(child: Text('默认'), value: 1),
+                  DropdownMenuItem(child: Text('最新'), value: 2),
+                ],
+                onChanged: (value) {
                   _dropdownValue=int.parse(value.toString());
                   setState(() {
                     // _dropdownValue=value;
                   });
-              },
+                },
               ),
               const SizedBox(width: 4.0,),
             ],
@@ -109,7 +186,7 @@ class _CategoryPageState extends State<CategoryPage> {
         //轮播图
         Expanded(
           child: ListView(
-              shrinkWrap:true,
+            shrinkWrap:true,
             scrollDirection:Axis.vertical ,
             children: [
               SizedBox(

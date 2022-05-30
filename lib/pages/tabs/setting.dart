@@ -11,26 +11,28 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Center(
-          child: Text('这里是登录页面'),
-        ),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/login');
-            },
-            child: const Text('跳转到登录页面')),
-        const Center(
-          child: Text('这里是注册页面'),
-        ),
-        ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/register1');
-            },
-            child: const Text('跳转到注册页面'))
-      ],
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Center(
+            child: Text('这里是登录页面'),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/login');
+              },
+              child: const Text('跳转到登录页面')),
+          const Center(
+            child: Text('这里是注册页面'),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/register1');
+              },
+              child: const Text('跳转到注册页面'))
+        ],
+      ),
     );
   }
 }

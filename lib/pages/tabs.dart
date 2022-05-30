@@ -1,10 +1,7 @@
-import 'package:dadada/pages/sidebar/models/cartmodel.dart';
-import 'package:dadada/pages/sidebar/models/catalogmodel.dart';
 import 'package:dadada/pages/tabs/Setting.dart';
 import 'package:dadada/pages/tabs/category.dart';
 import 'package:dadada/pages/tabs/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 
 class Tabs extends StatefulWidget {
@@ -19,7 +16,7 @@ class Tabs extends StatefulWidget {
 class _TabsState extends State<Tabs> {
   late int _currentIndex;
   final List _pageList = [
-    HomePage(),
+    const HomePage(),
     const CategoryPage(),
     const SettingPage(),
   ];
@@ -34,22 +31,6 @@ class _TabsState extends State<Tabs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              const Expanded(child: Text("LMJ's Daily Life"), flex: 4,),
-              Expanded(
-                child: InkWell(
-                  child: const CircleAvatar(radius: 18.0,
-                    backgroundImage: AssetImage('images/ys8.png'),),
-                  onTap: () {
-                    Navigator.pushNamed(context, '/login');
-                  },
-                ),
-              )
-            ],),
-        ),
       body: _pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex, //配置对应的索引值选中
@@ -67,64 +48,6 @@ class _TabsState extends State<Tabs> {
           BottomNavigationBarItem(icon: Icon(Icons.category), label: "求实"),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: "设置")
         ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              child: Text(
-                '我的日常',
-                style: TextStyle(
-                    fontSize: 40.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.blue),
-              ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-                image: DecorationImage(
-                  image: NetworkImage(
-                      "https://www.yulumi.cn/gl/uploads/allimg/201128/161H4HI-2.jpg"),
-                ),
-              ),
-            ),
-            ListTile(
-              title: const Text('学习'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context,'/study');
-              },
-            ),
-            ListTile(
-              title: const Text('科研'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context,'/research');
-              },
-            ),
-            ListTile(
-              title: const Text('生活'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context,'/life');
-              },
-            ),
-            ListTile(
-              title: const Text('休闲'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context,'/leisure');
-              },
-            ),
-            ListTile(
-              title: const Text('购物'),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context,'/mylogin');
-              },
-            )
-          ],
-        ),
       ),
     );
   }
