@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PostWidget extends StatefulWidget {
+  // 用于描述帖子简略信息的组件
   String? title = "标题";
   String? label = "湖底";
   String? detail = "这是帖子的具体描述,这是帖子的具体描述,这是帖子的具体描述,这是帖子的具体描述";

@@ -1,5 +1,5 @@
 
-import 'package:dadada/layout/gridview_layout.dart';
+import 'package:dadada/pages/customed_widget/gridview_layout.dart';
 import 'package:flutter/material.dart';
 
 class ResearchPage extends StatelessWidget {

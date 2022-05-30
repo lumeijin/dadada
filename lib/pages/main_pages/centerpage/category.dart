@@ -1,11 +1,12 @@
+import 'package:dadada/pages/main_pages/centerpage/tabviews/quanbu.dart';
 import 'package:flutter/material.dart';
+import 'tabviews/baitan.dart';
+import 'tabviews/jiaowang.dart';
+import 'tabviews/resou.dart';
+import 'tabviews/xiaowu.dart';
+import 'tabviews/xuexi.dart';
 
-import '../tabviews/baitan.dart';
-import '../tabviews/jiaowang.dart';
-import '../tabviews/quanbu.dart';
-import '../tabviews/resou.dart';
-import '../tabviews/xiaowu.dart';
-import '../tabviews/xuexi.dart';
+
 
 class CategoryPage extends StatefulWidget {
    //Flutter2.2.0之后需要注意把Key改为可空类型  {Key? key} 表示Key为可空类型

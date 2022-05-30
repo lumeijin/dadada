@@ -1,6 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
-import '../customed_widget/post_widget.dart';
+
+import '../../../customed_widget/post_widget.dart';
 
 class QuanBu extends StatefulWidget {
   const QuanBu({Key? key}) : super(key: key);

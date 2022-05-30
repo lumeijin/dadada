@@ -1,7 +1,8 @@
 import 'package:dadada/pages/tabs/Setting.dart';
-import 'package:dadada/pages/tabs/category.dart';
-import 'package:dadada/pages/tabs/homepage.dart';
 import 'package:flutter/material.dart';
+
+import 'main_pages/centerpage/category.dart';
+import 'main_pages/homepage/homepage.dart';
 
 
 class Tabs extends StatefulWidget {

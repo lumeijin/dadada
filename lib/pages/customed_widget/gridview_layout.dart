@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../res/listdata.dart';
+import '../../res/listdata.dart';
 
 class GridViewLayout extends StatelessWidget {
   const GridViewLayout({Key? key}) : super(key: key);

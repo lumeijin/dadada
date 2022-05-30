@@ -3,6 +3,10 @@ import 'package:dadada/pages/sidebar/mylogin.dart';
 import 'package:dadada/pages/user/Login.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/main_pages/centerpage/category.dart';
+import '../pages/main_pages/settingpage/user/register_first.dart';
+import '../pages/main_pages/settingpage/user/register_second.dart';
+import '../pages/main_pages/settingpage/user/register_third.dart';
 import '../pages/sidebar/mycatalog.dart';
 import '../pages/sidebar/life.dart';
 import '../pages/sidebar/research.dart';
@@ -10,10 +14,6 @@ import '../pages/sidebar/leisure.dart';
 import '../pages/sidebar/study.dart';
 import '../pages/tabs.dart';
 import '../pages/tabs/Setting.dart';
-import '../pages/tabs/category.dart';
-import '../pages/user/register_first.dart';
-import '../pages/user/register_second.dart';
-import '../pages/user/register_third.dart';
 
 final Map<String, Function> routes = {
   '/': (context, {arguments}) => const Tabs(),
