@@ -2,6 +2,7 @@ import 'package:dadada/pages/sidebar/mycart.dart';
 import 'package:dadada/pages/sidebar/mylogin.dart';
 import 'package:flutter/material.dart';
 
+import '../pages/customed_widget/delete_network_data_demo.dart';
 import '../pages/main_pages/centerpage/category.dart';
 import '../pages/main_pages/settingpage/setting.dart';
 import '../pages/main_pages/settingpage/user/login.dart';
@@ -33,6 +34,8 @@ final Map<String, Function> routes = {
   '/mycatalog': (context, {arguments}) => const MyCatalog(),
   '/mylogin': (context, {arguments}) => const MyLogin(),
   '/mycart': (context, {arguments}) => const MyCart(),
+
+  '/delete_network_data_demo':(context, {arguments})=> DeleteNetworkDataDemo(),
 
 
 };
