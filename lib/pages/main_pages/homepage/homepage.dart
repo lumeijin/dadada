@@ -28,8 +28,10 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButton: ElevatedButton(
         onPressed: () {
-          //用于直接跳转到需要进行测试的页面
-          Navigator.pushNamed(context,'/life');
+          ////////////////////////////////////////////////////////////////////////////////////
+          // 用于直接跳转到需要进行测试的页面
+          Navigator.pushNamed(context,'/delete_network_data_demo');
+          ////////////////////////////////////////////////////////////////////////////////////
         },
         child: const Text("快速测试"),),
       body: Column(
