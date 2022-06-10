@@ -73,6 +73,16 @@ class _DeleteNetworkDataDemoState extends State<DeleteNetworkDataDemo> {
     _futureAlbum = fetchAlbum();
   }
 
+  // List<Photo> parsePhotos(String responseBody) {
+  //   //  cast<R>() → List<R>
+  //   // Returns a view of this list as a list of R instances. [...]
+  //  所以这里的parsed是一个元素为Map<String, dynamic>的数组
+  //  也就是说cast明确了数组元素的类型
+  //   final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+  //
+  //   return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,3 +126,4 @@ class _DeleteNetworkDataDemoState extends State<DeleteNetworkDataDemo> {
     );
   }
 }
+

@@ -1,3 +1,4 @@
+import 'package:dadada/pages/customed_widget/isolate_demo.dart';
 import 'package:dadada/pages/sidebar/mycart.dart';
 import 'package:dadada/pages/sidebar/mylogin.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,7 @@ final Map<String, Function> routes = {
   '/mycart': (context, {arguments}) => const MyCart(),
 
   '/delete_network_data_demo':(context, {arguments})=> DeleteNetworkDataDemo(),
+  '/isolate_demo':(context, {arguments})=>IsolateDemo(),
 
 
 };
